@@ -1,16 +1,14 @@
 <script setup>
-const nome = "Amauri";
-const sobrenome = "Blanco";
-const idade = 33;
+  function minhaFuncao() {
+    alert('Mensagem da Função!')
+  }
 </script>
 
 <template>
-    <p class="texto">{{`O nome do Professor é ${nome} ${sobrenome}, ele tem ${idade} anos`}}</p>
+  <button @click="minhaFuncao">Clique Aqui</button>
+  <input type="text" @keypress="minhaFuncao">
 </template>
 
 <style scoped>
-  .texto {
-    background-color: blue;
-    color: black;
-  }
+
 </style>
