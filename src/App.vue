@@ -1,28 +1,22 @@
 <script setup>
 import { ref } from "vue";
 
-const nome = ref('')
-const active = ref(true)
+const frutas = ref(["Maçã", "Banana", "Laranja"]);
+const novoItem = ref('')
 
+function adicionarNovoItem() {
+  frutas.value.push(novoItem.value)
+  novoItem.value = ''
+}
 </script>
 
 <template>
-  <button @click="active = !active">Troca cor</button>
-   
-  <input v-model="nome" type="text" placeholder="Digite seu nome">
-
-  <p :class="active ? 'blue' : 'red'">Olá, {{nome}}</p>
-
-  <a :href="`https://www.google.com/${id}`">link</a>
-    
+  <input @keyup.enter="adicionarNovoItem" v-model="novoItem" type="text" placeholder="Adicione um novo item">
+    <ul>
+        <li v-for="fruta in frutas" :key="fruta">
+            {{ fruta }}
+        </li>
+    </ul>
 </template>
 
-<style scoped>
-.blue {
-  color: blue;
-}
-
-.red {
-  color: red;
-}
-</style>
+<style scoped></style>
