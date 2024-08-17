@@ -1,21 +1,15 @@
 <script setup>
 import { ref } from "vue";
 
-let ehVisivel = ref(false);
-function minhaFuncao() {
-  ehVisivel.value = !ehVisivel.value;
-}
+const nome = ref('')
+
 </script>
 
 <template>
-    <button @click="minhaFuncao">Clique Aqui</button>
+   
+  <input v-model="nome" type="text" placeholder="Digite seu nome">
 
-    <p v-if="ehVisivel">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur hic
-        cumque culpa aut! Architecto dignissimos fuga id sunt, iste laborum
-        assumenda magni non, ipsa aliquam nulla ratione placeat, temporibus
-        tempore.
-    </p>
+  <p>Olá, {{nome}}</p>
     
 </template>
 
