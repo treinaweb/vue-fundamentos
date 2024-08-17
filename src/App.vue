@@ -1,12 +1,16 @@
 <script setup>
+import { ref } from 'vue';
+
+let numero = ref(0);
+console.log(numero)
   function minhaFuncao() {
-    alert('Mensagem da Função!')
+    numero.value = numero.value + 1;
   }
 </script>
 
 <template>
   <button @click="minhaFuncao">Clique Aqui</button>
-  <input type="text" @keypress="minhaFuncao">
+  {{ numero }}
 </template>
 
 <style scoped>
