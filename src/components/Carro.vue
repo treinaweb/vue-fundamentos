@@ -1,10 +1,5 @@
 <script setup>
-const props = defineProps({
-    imagem: String,
-    nome: String,
-    ano: Number,
-    descricao: String,
-});
+const props = defineProps(['imagem', 'nome', 'ano', 'descricao']);
 </script>
 
 <template>
@@ -12,7 +7,7 @@ const props = defineProps({
         <img
             :src="props.imagem"
             alt=""
-            width="200px"
+            width="100%"
             height="auto"
         />
         <h2> {{ props.nome }} </h2>
