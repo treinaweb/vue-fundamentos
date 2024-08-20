@@ -11,6 +11,16 @@ const props = defineProps(['imagem', 'nome', 'ano', 'descricao']);
             height="auto"
         />
         <h2> {{ props.nome }} </h2>
+        <p>
+            <slot name="estado">
+                Novo
+            </slot>
+        </p>
+        <p>
+            <slot name="cambio">
+                Automático
+            </slot>
+        </p>
         <h3>{{ props.ano }}</h3>
         <p>{{ props.descricao }}</p>
     </div>
